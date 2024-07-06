@@ -13,6 +13,18 @@
 # HINT: using % operator to find remainder may be helpful
 def dose(needs):
     #YOUR SOLUTION STARTS HERE
+    if max(needs) > 250 or sum(needs) >= 500:
+        return 'No medicine given'
+    else:
+        medicineList = []
 
+        for i in needs:
+            if i == 250:
+                continue
+            elif i % 10 == 0:
+                medicineList.append((i // 10, 0))
+            else:
+                medicineList.append((i // 10 + 1, 10 - i % 10))
+
+        return medicineList
     #YOUR SOLUTION ENDS HERE
-
